@@ -1,9 +1,8 @@
 const { initializeApp, cert } = require('firebase-admin/app');
 const { getFirestore } = require('firebase-admin/firestore');
-const firebaseConfig = require('./firebase.json')
 
 initializeApp({
-    credential: cert(firebaseConfig)
+    credential: cert(JSON.parse(process.env.FIREBASE_CONFIG))
 });
 
 
